@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   # main contorller action
   get '/ifttt' do
     tweeter = Tweeter.new
-    tweets = tweeter.search_hashtag("HBSLTV")
+    tweets = tweeter.retweet!("HBSLTV")
     erb "index.html".to_sym, :locals => { :tweets => tweets, :since => tweeter.last_retweeted_id }
   end
 
