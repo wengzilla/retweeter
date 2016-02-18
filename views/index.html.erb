@@ -1,9 +1,11 @@
 <h1>Retweeted Tweets</h1>
 
+<p><%= "Last retweet: #{since}" %></p>
+
 <% if tweets.any? %>
   <ul>
     <% tweets.each do |tweet| %>
-      <li><%= "#{tweet.user.name}: #{tweet.text}" %></li>
+      <li><%= "#{tweet.id} #{tweet.user.name}: #{tweet.text}" %></li>
     <% end %>
   </ul>
 <% else %>
