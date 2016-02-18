@@ -10,7 +10,7 @@ class Tweeter
     search_hashtag(hashtag).map do |tweet|
       begin
         client.retweet(tweet)
-        tweet.text
+        tweet
       rescue Twitter::Error::Forbidden => e
         puts "#{e.to_s} => #{tweet.text}"
       end
