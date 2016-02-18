@@ -1,0 +1,11 @@
+<h1>Retweeted Tweets</h1>
+
+<% if tweets.any? %>
+  <ul>
+    <% tweets.each do |tweet| %>
+      <li><%= "#{tweet.user.name}: #{tweet.text}" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  No retweets.
+<% end %>
